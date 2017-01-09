@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import KanbanBoard from './KanbanBoard';
 
-class App extends Component {
+/* class App extends Component {
 	render() {
 		const place = 'World';
 		return (
 			<h1>Hello {place}</h1>
 		);
 	}
-}
+}*/
 
-/*// Parent Component
+/* // Parent Component
 class GroceryList extends Component {
 	render() {
 		return (
@@ -36,7 +37,7 @@ class ListItem extends Component {
 
 // Using props.children to get the content between opening and closing tags
 // Parent Component
-class GroceryList extends Component {
+/* class GroceryList extends Component {
 	render() {
 		return (
 			<ul>
@@ -60,4 +61,39 @@ class ListItem extends Component {
 }
 
 
-render(<GroceryList />, document.getElementById('root'));
+render(<GroceryList />, document.getElementById('root'));*/
+
+const cardsList = [
+	{
+		id          : 1,
+		title       : 'Read the book',
+		description : 'I should read the whole book',
+		status      : 'in-progress',
+		tasks       : [],
+	},
+	{
+		id          : 2,
+		title       : 'Write some code',
+		description : 'Code along with the samples in the book',
+		status      : 'todo',
+		tasks       : [
+			{
+				id   : 1,
+				name : 'ContactList Example',
+				done : true,
+			},
+			{
+				id   : 2,
+				name : 'Kanban Example',
+				done : false,
+			},
+			{
+				id   : 3,
+				name : 'My own experiments',
+				done : false,
+			},
+		],
+	},
+];
+
+render(<KanbanBoard cards={cardsList} />, document.getElementById('root'));
