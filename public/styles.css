@@ -72,11 +72,11 @@ ul {
 .card_title:before {
 	display: inline-block;
 	width: 1em;
-	content: &#10583;
+	content: '\25BA';
 }
 
 .card_title--is-open:before {
-	content: &#10581;
+	content: '\25BC';
 }
 
 .checklist_task:first-child {
